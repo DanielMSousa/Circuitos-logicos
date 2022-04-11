@@ -13,8 +13,13 @@ module register_m
   timeunit        1ns ;
   timeprecision 100ps ;
 
-  always_ff @....
+  always_ff @(posedge clk)
+		if(rst == 0)
+			q = 0
+		else if(enb == 1)
+			q = d
+			
 
 
-....
+//....
 endmodule : register_m
